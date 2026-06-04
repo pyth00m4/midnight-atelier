@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background-color: #0F172A;
+    color: #F8F5F0;
+    font-family: Georgia, serif;
+}
+.logo {
+    color: #D4AF37;
+    font-family: Georgia, serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.brand h2 {
+    color: #D4AF37;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+
+.brand p {
+    color: #D6D3D1;
+    margin-top: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 2px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F8F5F0;
+}
+
+.hero {
+    height: 100vh;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0F172A;
+    color: #F8F5F0;
+    font-family: Georgia, serif;
+}
+
+button {
+    background-color: #D4AF37;
+    border: 0px;
+    color: #0F172A;;
+    height: 10vh;
+    width: 40vw;
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #1E293B;
+    text-align: center;
+    font-size: Georgia, serif;
+    color: #D6D3D1;
+}
