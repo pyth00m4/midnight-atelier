@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    background-color: #0F172A;
+    color: #F8F5F0;
+    font-family: Georgia, serif;
+}
+.logo {
+    color: #D4AF37;
+    font-family: Georgia, serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.brand h2 {
+    color: #D4AF37;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+
+.brand p {
+    color: #D6D3D1;
+    margin-top: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 2px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F8F5F0;
+}
+footer {
+    background-color: #111827;
+    border-top: 1px solid #D4AF37;
+
+    padding-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 0 2rem 3rem;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.footer-brand,
+.footer-nav,
+.footer-social {
+    flex: 1;
+}
+
+.footer-brand h3,
+.footer-nav h4,
+.footer-social h4 {
+    color: #D4AF37;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: #F8F5F0;
+    line-height: 1.8;
+}
+
+.footer-nav ul,
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li,
+.footer-social li {
+    margin-bottom: .75rem;
+}
+
+.footer-nav a,
+.footer-social a {
+    color: #F8F5F0;
+    text-decoration: none;
+
+    transition: color .3s ease;
+}
+
+.footer-nav a:hover,
+.footer-social a:hover {
+    color: #D4AF37;
+}
+
+.footer-bottom {
+    text-align: center;
+
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+
+    padding: 1.5rem;
+}
+
+.footer-bottom p {
+    color: #F8F5F0;
+    font-size: .9rem;
+}
+/* =========================
+   COLLECTIONS SECTION
+   ========================= */
+
+#collections {
+    padding: 5rem 2rem;
+    background-color: #0F172A;
+    text-align: center;
+}
+
+#collections h2 {
+    color: #D4AF37;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   GRID CONTAINER
+   ========================= */
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   CARD
+   ========================= */
+
+.collection-card {
+    background-color: #111827;
+    border: 1px solid #D4AF37;
+    border-radius: 10px;
+    overflow: hidden;
+
+    transition: transform .3s ease,
+                box-shadow .3s ease;
+}
+
+.collection-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(212,175,55,.15);
+}
+
+
+/* =========================
+   IMAGE
+   ========================= */
+
+.collection-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.card-content {
+    padding: 2rem;
+}
+
+
+/* =========================
+   CARD TITLE
+   ========================= */
+
+.card-content h3 {
+    color: #D4AF37;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+
+/* =========================
+   DIVIDER
+   ========================= */
+
+.divider {
+    width: 60px;
+    height: 1px;
+    background-color: #D4AF37;
+    margin: 1rem auto 1.5rem;
+}
+
+
+/* =========================
+   PARAGRAPH
+   ========================= */
+
+.card-content p {
+    color: #F8F5F0;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.card-button {
+    display: inline-block;
+
+    background-color: #D4AF37;
+    color: #0F172A;
+
+    text-decoration: none;
+
+    padding: .8rem 1.5rem;
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: .3s ease;
+}
+
+.card-button:hover {
+    transform: scale(1.05);
+}
