@@ -52,6 +52,7 @@ nav ul li a {
     background-image: url("../images/hero.png");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     position: relative;
 
     color: #F8F5F0;
@@ -59,15 +60,18 @@ nav ul li a {
 }
 
 button {
+    background-color: transparent;
+    border: 1px solid #D4AF37;
+    color: #F8F5F0;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
     background-color: #D4AF37;
-    border: 0px;
-    color: #0F172A;;
-    height: 10vh;
-    width: 40vw;
-    font-size: 20px;
-    display: block;
-    margin-top: 40px;
-    height: 20px'
+    color: #0F172A;
 }
 
 footer {
@@ -141,4 +145,66 @@ footer {
 .footer-bottom p {
     color: #F8F5F0;
     font-size: .9rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 3rem 1.5rem;
+        justify-content: flex-end;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1.5rem 2rem;
+    }
+
+    .footer-brand,
+    .footer-nav,
+    .footer-social {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+     .hero {
+        background-attachment: scroll; /* overrides fixed on mobile */
+    }
 }
