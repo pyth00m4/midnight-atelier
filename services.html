@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Midnight Atelier</title>
+  <title>Services — Midnight Atelier</title>
   <!-- Ensures the page scales correctly on mobile devices -->
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
+  <meta name="description" content="Bespoke tailoring services at Midnight Atelier — suits, alterations, occasion wear, and more." />
   <!-- Links to the services-specific stylesheet -->
   <link rel="stylesheet" href="css/servicesstyles.css">
 </head>
@@ -15,7 +15,7 @@
        HEADER & NAVIGATION
        Brand on the left, nav links on the right.
        On mobile the nav wraps to a second line
-       instead of stacking vertically.
+       instead of collapsing into a hamburger menu.
        ===================== -->
   <header>
     <nav>
@@ -35,111 +35,146 @@
   <main>
 
     <!-- =====================
-         COLLECTIONS SECTION
-         Wraps the heading and the entire card grid.
-         Styled via #collections in the CSS.
+         PAGE HERO
+         No background image — the index.html hero
+         already sets the visual tone. This section
+         introduces the page with a gold eyebrow label,
+         a large heading, and a subheading.
+         Sits above the grid with a gold bottom border
+         to separate it from the service cards.
          ===================== -->
-    <section id="collections">
-      <h2>Our Collections</h2>
+    <section class="services-hero">
+      <!-- Small gold uppercase label above the heading -->
+      <p class="services-eyebrow">What We Offer</p>
+      <h1>Crafted to Your Measure</h1>
+      <!-- Supporting sentence — muted colour to sit quietly below the h1 -->
+      <p class="services-subhead">
+        Every garment begins with a conversation. From a first bespoke suit
+        to a lifelong wardrobe, we work at the pace and precision the craft demands.
+      </p>
+    </section>
 
-      <!-- =====================
-           COLLECTION GRID
-           CSS Grid container that holds all four cards.
-           Displays as 2 columns on desktop,
-           switches to 1 column on mobile.
-           Class: collection-grid
-           ===================== -->
-      <div class="collection-grid">
+    <!-- =====================
+         SERVICES GRID
+         CSS Grid — 2 columns on desktop, 1 on mobile.
+         Each service is an <article> (self-contained content)
+         with a gold number, heading, divider, description,
+         and a text-link CTA.
 
-        <!-- =====================
-             HOW A CARD IS BUILT
-             Each card follows this exact structure:
+         TO ADD A NEW SERVICE: copy any <article> block,
+         update the number, heading, description, and button
+         text. The CSS handles layout automatically.
+         ===================== -->
+    <section class="services-section">
+      <div class="services-grid">
 
-             <article class="collection-card">   ← Outer card wrapper
-               <img>                             ← Full-width image at the top
-               <div class="card-content">        ← Text area below the image
-                 <p class="card-label">          ← Card title/label
-                 <div class="divider">           ← Thin gold decorative line
-                 <p>                             ← Description paragraph
-                 <a class="card-button">         ← Gold CTA button link
-
-             Using <article> is intentional — each card is a
-             self-contained, independent piece of content.
-             All four cards share the same classes so they
-             get identical styling automatically. Adding a
-             new card just means copying this structure.
-             ===================== -->
-
-        <!-- CARD 1: Signature Collection -->
-        <article class="collection-card">
-          <!-- Image sits flush at the top of the card.
-               object-fit: cover in CSS crops it to a fixed
-               height without distorting the image. -->
-          <img src="images/signature.png" alt="Midnight Atelier signature fragrance bottle">
-
-          <div class="card-content">
-            <!-- Card label acts as the card's heading -->
-            <p class="card-label">Signature Collection</p>
-
-            <!-- Decorative gold divider line between title and text -->
+        <!-- SERVICE 1: Bespoke Suits -->
+        <article class="service-card">
+          <!-- Gold number — purely decorative, not semantic ordering -->
+          <div class="service-number">01</div>
+          <div class="service-content">
+            <h3>Bespoke Suits</h3>
+            <!-- Thin gold line separating title from body text -->
             <div class="divider"></div>
-
-            <!-- Short description of this collection -->
             <p>
-              A curated selection of handcrafted fragrances designed to evoke elegance,
-              individuality, and timeless sophistication.
+              Built entirely from scratch to your measurements, posture, and preference.
+              Full canvas construction, hand-stitched lapels, and cloth sourced from
+              the finest British and Italian mills.
             </p>
-
-            <!-- CTA button — uses <a> not <button> because it navigates somewhere -->
-            <a href="#" class="card-button">Explore</a>
+            <!-- Text-link CTA — navigates to contact page -->
+            <a href="contact.html" class="card-button">Book a Fitting</a>
           </div>
         </article>
 
-        <!-- CARD 2: Bespoke Fragrances -->
-        <article class="collection-card">
-          <img src="images/bespoke.png" alt="Bespoke fragrance creation">
-          <div class="card-content">
-            <p class="card-label">Bespoke Fragrances</p>
+        <!-- SERVICE 2: Made-to-Measure -->
+        <article class="service-card">
+          <div class="service-number">02</div>
+          <div class="service-content">
+            <h3>Made-to-Measure</h3>
             <div class="divider"></div>
             <p>
-              Create a personal scent tailored to your memories, preferences, and style.
+              A refined fit from a base pattern adjusted to your proportions.
+              Ideal for clients who want a tailored result with a shorter lead time
+              and a more accessible price point.
             </p>
-            <a href="#" class="card-button">Discover</a>
+            <a href="contact.html" class="card-button">Book a Fitting</a>
           </div>
         </article>
 
-        <!-- CARD 3: Luxury Gift Sets -->
-        <article class="collection-card">
-          <img src="images/gift-set.png" alt="Luxury fragrance gift set">
-          <div class="card-content">
-            <p class="card-label">Luxury Gift Sets</p>
+        <!-- SERVICE 3: Occasion & Black Tie -->
+        <article class="service-card">
+          <div class="service-number">03</div>
+          <div class="service-content">
+            <h3>Occasion &amp; Black Tie</h3>
             <div class="divider"></div>
             <p>
-              Thoughtfully assembled fragrance sets designed for unforgettable gifting.
+              Wedding suits, morning dress, dinner jackets, and tuxedos.
+              Dressed for the moment, built to outlast it.
             </p>
-            <a href="#" class="card-button">Shop Gifts</a>
+            <a href="contact.html" class="card-button">Book a Fitting</a>
           </div>
         </article>
 
-        <!-- CARD 4: Seasonal Collections -->
-        <article class="collection-card">
-          <img src="images/seasonal.png" alt="Seasonal Midnight Atelier fragrance collection">
-          <div class="card-content">
-            <p class="card-label">Seasonal Collections</p>
+        <!-- SERVICE 4: Shirts & Trousers -->
+        <article class="service-card">
+          <div class="service-number">04</div>
+          <div class="service-content">
+            <h3>Shirts &amp; Trousers</h3>
             <div class="divider"></div>
             <p>
-              Limited-edition scents inspired by the atmosphere and beauty of each season.
+              Bespoke dress shirts cut to your collar, cuff, and sleeve length.
+              Trousers with the exact rise, break, and seat you've always struggled
+              to find off the rack.
             </p>
-            <a href="#" class="card-button">View Collection</a>
+            <a href="contact.html" class="card-button">Book a Fitting</a>
           </div>
         </article>
 
-        <!-- TO ADD A NEW CARD: copy any article block above,
-             update the image src, alt text, card-label, description,
-             and button text. The CSS handles the rest automatically. -->
+        <!-- SERVICE 5: Alterations & Restoration -->
+        <article class="service-card">
+          <div class="service-number">05</div>
+          <div class="service-content">
+            <h3>Alterations &amp; Restoration</h3>
+            <div class="divider"></div>
+            <p>
+              Tailoring existing garments to fit as they should. We also restore
+              and reline vintage and heirloom pieces — coats, suits, and jackets
+              worth preserving.
+            </p>
+            <a href="contact.html" class="card-button">Get in Touch</a>
+          </div>
+        </article>
 
-      </div><!-- end .collection-grid -->
-    </section><!-- end #collections -->
+        <!-- SERVICE 6: Wardrobe Consultation -->
+        <article class="service-card">
+          <div class="service-number">06</div>
+          <div class="service-content">
+            <h3>Wardrobe Consultation</h3>
+            <div class="divider"></div>
+            <p>
+              A private session to assess, edit, and plan your wardrobe with intention.
+              We advise on cloth, colour, and what to commission next — no obligation required.
+            </p>
+            <a href="contact.html" class="card-button">Book a Session</a>
+          </div>
+        </article>
+
+      </div><!-- end .services-grid -->
+    </section><!-- end .services-section -->
+
+    <!-- =====================
+         CLOSING CTA
+         Centred section at the bottom of the page
+         driving visitors to book a consultation.
+         Uses the shared <button> style from the CSS.
+         ===================== -->
+    <section class="services-cta">
+      <p class="services-eyebrow">Ready to Begin</p>
+      <h2>Your First Fitting is a Conversation</h2>
+      <p>No pressure, no commitment. Come in, tell us what you need, and we'll tell you what's possible.</p>
+      <!-- Wrapping button in <a> so the whole element is a link -->
+      <a href="contact.html"><button>Book a Consultation</button></a>
+    </section>
 
   </main>
 
@@ -154,10 +189,7 @@
       <!-- Brand column -->
       <div class="footer-brand">
         <h3>Midnight Atelier</h3>
-        <p>
-          Bespoke tailoring crafted with precision,
-          elegance, and timeless style.
-        </p>
+        <p>Bespoke tailoring crafted with precision, elegance, and timeless style.</p>
       </div>
 
       <!-- Navigation column -->
@@ -165,7 +197,7 @@
         <h4>Navigation</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Collections</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
