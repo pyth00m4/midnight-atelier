@@ -1,9 +1,20 @@
+/* =========================
+   GLOBAL RESET & BASE
+   Sets default margin, background color, text color,
+   and font for the entire page
+   ========================= */
 body {
     margin: 0;
     background-color: #0F172A;
     color: #F8F5F0;
     font-family: Georgia, serif;
 }
+
+/* =========================
+   LOGO
+   Gold uppercase lettering with spacing —
+   used if a .logo class element is added
+   ========================= */
 .logo {
     color: #D4AF37;
     font-family: Georgia, serif;
@@ -11,6 +22,11 @@ body {
     text-transform: uppercase;
 }
 
+/* =========================
+   NAVIGATION BAR
+   Horizontal layout with brand on the left,
+   links on the right
+   ========================= */
 nav {
     display: flex;
     justify-content: space-between;
@@ -18,12 +34,14 @@ nav {
     padding: 2rem;
 }
 
+/* Brand name in gold */
 .brand h2 {
     color: #D4AF37;
     margin-bottom: 0;
     letter-spacing: 2px;
 }
 
+/* Tagline beneath the brand name */
 .brand p {
     color: #D6D3D1;
     margin-top: 0;
@@ -31,6 +49,7 @@ nav {
     text-transform: uppercase;
 }
 
+/* Nav link list — horizontal row with spacing */
 nav ul {
     list-style: none;
     display: flex;
@@ -38,34 +57,40 @@ nav ul {
     margin: 2px;
 }
 
+/* Individual nav links — no underline, light color */
 nav ul li a {
     text-decoration: none;
     color: #F8F5F0;
 }
 
+/* =========================
+   FOOTER
+   Dark background with gold top border
+   ========================= */
 footer {
     background-color: #111827;
     border-top: 1px solid #D4AF37;
-
     padding-top: 4rem;
 }
 
+/* Three-column layout: brand, nav links, social links */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-
     padding: 0 2rem 3rem;
     display: flex;
     justify-content: space-between;
     gap: 2rem;
 }
 
+/* Each footer column takes equal space */
 .footer-brand,
 .footer-nav,
 .footer-social {
     flex: 1;
 }
 
+/* Gold headings for each footer column */
 .footer-brand h3,
 .footer-nav h4,
 .footer-social h4 {
@@ -73,27 +98,30 @@ footer {
     margin-bottom: 1rem;
 }
 
+/* Footer brand description text */
 .footer-brand p {
     color: #F8F5F0;
     line-height: 1.8;
 }
 
+/* Remove default list styling from footer link lists */
 .footer-nav ul,
 .footer-social ul {
     list-style: none;
     padding: 0;
 }
 
+/* Spacing between footer list items */
 .footer-nav li,
 .footer-social li {
     margin-bottom: .75rem;
 }
 
+/* Footer links — white, no underline, gold on hover */
 .footer-nav a,
 .footer-social a {
     color: #F8F5F0;
     text-decoration: none;
-
     transition: color .3s ease;
 }
 
@@ -102,11 +130,10 @@ footer {
     color: #D4AF37;
 }
 
+/* Copyright bar at the very bottom of the footer */
 .footer-bottom {
     text-align: center;
-
     border-top: 1px solid rgba(212, 175, 55, 0.2);
-
     padding: 1.5rem;
 }
 
@@ -115,41 +142,56 @@ footer {
     font-size: .9rem;
 }
 
+/* =========================
+   CONTACT SECTION
+   Full-width section with generous padding
+   ========================= */
 #contact {
     background-color: #0F172A;
     padding: 6rem 2rem;
     color: #F8F5F0;
 }
 
+/* =========================
+   CONTACT CONTAINER
+   Two-column layout: info on the left, form on the right
+   ========================= */
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
-
     display: flex;
     gap: 4rem;
     align-items: flex-start;
 }
 
+/* Each column takes equal half width */
 .contact-info,
 .contact-form {
     flex: 1;
 }
 
+/* Large gold heading for the contact info column */
 .contact-info h1 {
     color: #D4AF37;
     font-size: 3rem;
     margin-bottom: 1.5rem;
 }
 
+/* Body copy in the contact info column */
 .contact-info p {
     line-height: 1.8;
     margin-bottom: 1.2rem;
 }
 
+/* Contact details block (email, phone, location) */
 .contact-details {
     margin-top: 2rem;
 }
 
+/* =========================
+   CONTACT FORM
+   Dark card with gold border containing all form fields
+   ========================= */
 .contact-form {
     background-color: #111827;
     padding: 2.5rem;
@@ -157,6 +199,7 @@ footer {
     border-radius: 10px;
 }
 
+/* Form labels in gold above each field */
 .contact-form label {
     display: block;
     margin-bottom: .5rem;
@@ -164,39 +207,47 @@ footer {
     font-weight: bold;
 }
 
+/* =========================
+   FORM FIELDS
+   box-sizing: border-box ensures padding is included
+   in the width calculation, preventing fields from
+   overflowing outside the form border
+   ========================= */
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
     width: 100%;
     padding: 1rem;
     margin-bottom: 1.5rem;
-
+    box-sizing: border-box;
     background-color: #0F172A;
     color: #F8F5F0;
-
     border: 1px solid rgba(212, 175, 55, 0.5);
     border-radius: 5px;
-
     font-family: inherit;
 }
 
+/* Textarea taller than standard inputs, vertically resizable */
 .contact-form textarea {
     min-height: 160px;
     resize: vertical;
 }
 
+/* Dimmed placeholder text so it doesn't compete with typed input */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: rgba(248, 245, 240, 0.6);
 }
 
+/* =========================
+   SUBMIT BUTTON
+   Solid gold button — turns light cream on hover
+   ========================= */
 .contact-form button {
     background-color: #D4AF37;
     color: #0F172A;
-
     border: none;
     padding: 1rem 2rem;
-
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
@@ -206,29 +257,38 @@ footer {
     background-color: #F8F5F0;
 }
 
-/* Mobile */
+/* =========================
+   MOBILE — max-width: 768px
+   Adjustments for smaller screens
+   ========================= */
 @media (max-width: 768px) {
+
+    /* Nav stays horizontal but wraps to a second line if needed */
     nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+        flex-wrap: wrap;
         padding: 1.5rem;
+        gap: 0.5rem;
     }
 
+    /* Nav links wrap instead of stacking vertically */
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 0.75rem;
     }
 
+    /* Reduce section padding on mobile */
     #contact {
         padding: 3rem 1.5rem;
     }
 
+    /* Stack info and form vertically on mobile */
     .contact-container {
         flex-direction: column;
         gap: 2rem;
     }
 
+    /* Smaller heading on mobile */
     .contact-info h1 {
         font-size: 2rem;
     }
@@ -237,37 +297,45 @@ footer {
         font-size: 0.95rem;
     }
 
+    /* Reduce form padding on mobile */
     .contact-form {
         padding: 1.5rem;
     }
 
+    /* Slightly larger font and reduced padding for touch targets.
+       box-sizing repeated here to ensure it holds on mobile too. */
     .contact-form input,
     .contact-form select,
     .contact-form textarea {
         font-size: 1rem;
         padding: 0.85rem;
+        box-sizing: border-box;
     }
 
+    /* Submit button fills full width on mobile */
     .contact-form button {
         width: 100%;
         padding: 1rem;
     }
 
+    /* Prevent any image from overflowing its container */
     img {
         max-width: 100%;
         height: auto;
     }
 
+    /* Footer columns wrap naturally instead of forcing a single stack */
     .footer-container {
-        flex-direction: column;
-        gap: 2rem;
+        flex-wrap: wrap;
+        gap: 1.5rem;
         padding: 0 1.5rem 2rem;
     }
 
+    /* Each footer column shrinks but won't go below 140px wide */
     .footer-brand,
     .footer-nav,
     .footer-social {
-        width: 100%;
+        flex: 1 1 140px;
     }
 
     .footer-bottom {

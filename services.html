@@ -3,132 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <title>Midnight Atelier</title>
+  <!-- Ensures the page scales correctly on mobile devices -->
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
+  <!-- Links to the services-specific stylesheet -->
   <link rel="stylesheet" href="css/servicesstyles.css">
 </head>
 <body>
+
+  <!-- =====================
+       HEADER & NAVIGATION
+       Brand on the left, nav links on the right.
+       On mobile the nav wraps to a second line
+       instead of stacking vertically.
+       ===================== -->
   <header>
     <nav>
-        <div class="brand">
-    <h2>Midnight Atelier</h2>
-    <p>Bespoke Tailoring</p>
-</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="brand">
+        <h2>Midnight Atelier</h2>
+        <p>Bespoke Tailoring</p>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <!--Section is for the entire collections-->
-   <section class="collections">
-  <h2>Our Collections</h2>
-  <!--Holds the cards-->
-  <div class="collection-grid">
 
-    <article class="collection-card"> <!--Collection Card for all to maintain consistent and reuable code also shortens coding time by applyoing it to all collections-->
-      <!--Article is used fir each individual card-->
-      <img src="images/signature.png" alt="Midnight Atelier signature fragrance bottle">
+    <!-- =====================
+         COLLECTIONS SECTION
+         Wraps the heading and the entire card grid.
+         Styled via #collections in the CSS.
+         ===================== -->
+    <section id="collections">
+      <h2>Our Collections</h2>
 
-      <div class="card-content">
-        <p class="card-label">Signature Collection</p>
-        <div class="divider"></div>
-        <p>
-          A curated selection of handcrafted fragrances designed to evoke elegance,
-          individuality, and timeless sophistication.
-        </p>
-        <a href="#" class="card-button">Explore</a>
-      </div>
-    </article>
+      <!-- =====================
+           COLLECTION GRID
+           CSS Grid container that holds all four cards.
+           Displays as 2 columns on desktop,
+           switches to 1 column on mobile.
+           Class: collection-grid
+           ===================== -->
+      <div class="collection-grid">
 
-    <article class="collection-card">
-      <img src="images/bespoke.png" alt="Bespoke fragrance creation">
+        <!-- =====================
+             HOW A CARD IS BUILT
+             Each card follows this exact structure:
 
-      <div class="card-content">
-        <p class="card-label">Bespoke Fragrances</p>
-        <div class="divider"></div>
-        <p>
-          Create a personal scent tailored to your memories, preferences, and style.
-        </p>
-        <a href="#" class="card-button">Discover</a>
-      </div>
-    </article>
+             <article class="collection-card">   ← Outer card wrapper
+               <img>                             ← Full-width image at the top
+               <div class="card-content">        ← Text area below the image
+                 <p class="card-label">          ← Card title/label
+                 <div class="divider">           ← Thin gold decorative line
+                 <p>                             ← Description paragraph
+                 <a class="card-button">         ← Gold CTA button link
 
-    <article class="collection-card">
-      <img src="images/gift-set.png" alt="Luxury fragrance gift set">
+             Using <article> is intentional — each card is a
+             self-contained, independent piece of content.
+             All four cards share the same classes so they
+             get identical styling automatically. Adding a
+             new card just means copying this structure.
+             ===================== -->
 
-      <div class="card-content">
-        <p class="card-label">Luxury Gift Sets</p>
-        <div class="divider"></div>
-        <p>
-          Thoughtfully assembled fragrance sets designed for unforgettable gifting.
-        </p>
-        <a href="#" class="card-button">Shop Gifts</a>
-      </div>
-    </article>
+        <!-- CARD 1: Signature Collection -->
+        <article class="collection-card">
+          <!-- Image sits flush at the top of the card.
+               object-fit: cover in CSS crops it to a fixed
+               height without distorting the image. -->
+          <img src="images/signature.png" alt="Midnight Atelier signature fragrance bottle">
 
-    <article class="collection-card">
-      <img src="images/seasonal.png" alt="Seasonal Midnight Atelier fragrance collection">
+          <div class="card-content">
+            <!-- Card label acts as the card's heading -->
+            <p class="card-label">Signature Collection</p>
 
-      <div class="card-content">
-        <p class="card-label">Seasonal Collections</p>
-        <div class="divider"></div>
-        <p>
-          Limited-edition scents inspired by the atmosphere and beauty of each season.
-        </p>
-        <a href="#" class="card-button">View Collection</a>
-      </div>
-    </article>
+            <!-- Decorative gold divider line between title and text -->
+            <div class="divider"></div>
 
-  </div>
-</section>
+            <!-- Short description of this collection -->
+            <p>
+              A curated selection of handcrafted fragrances designed to evoke elegance,
+              individuality, and timeless sophistication.
+            </p>
+
+            <!-- CTA button — uses <a> not <button> because it navigates somewhere -->
+            <a href="#" class="card-button">Explore</a>
+          </div>
+        </article>
+
+        <!-- CARD 2: Bespoke Fragrances -->
+        <article class="collection-card">
+          <img src="images/bespoke.png" alt="Bespoke fragrance creation">
+          <div class="card-content">
+            <p class="card-label">Bespoke Fragrances</p>
+            <div class="divider"></div>
+            <p>
+              Create a personal scent tailored to your memories, preferences, and style.
+            </p>
+            <a href="#" class="card-button">Discover</a>
+          </div>
+        </article>
+
+        <!-- CARD 3: Luxury Gift Sets -->
+        <article class="collection-card">
+          <img src="images/gift-set.png" alt="Luxury fragrance gift set">
+          <div class="card-content">
+            <p class="card-label">Luxury Gift Sets</p>
+            <div class="divider"></div>
+            <p>
+              Thoughtfully assembled fragrance sets designed for unforgettable gifting.
+            </p>
+            <a href="#" class="card-button">Shop Gifts</a>
+          </div>
+        </article>
+
+        <!-- CARD 4: Seasonal Collections -->
+        <article class="collection-card">
+          <img src="images/seasonal.png" alt="Seasonal Midnight Atelier fragrance collection">
+          <div class="card-content">
+            <p class="card-label">Seasonal Collections</p>
+            <div class="divider"></div>
+            <p>
+              Limited-edition scents inspired by the atmosphere and beauty of each season.
+            </p>
+            <a href="#" class="card-button">View Collection</a>
+          </div>
+        </article>
+
+        <!-- TO ADD A NEW CARD: copy any article block above,
+             update the image src, alt text, card-label, description,
+             and button text. The CSS handles the rest automatically. -->
+
+      </div><!-- end .collection-grid -->
+    </section><!-- end #collections -->
+
   </main>
 
-<footer>
+  <!-- =====================
+       FOOTER
+       Three columns: brand info, nav links, social links.
+       On mobile the columns wrap naturally rather than stacking.
+       ===================== -->
+  <footer>
+    <div class="footer-container">
 
-<div class="footer-container">
-
-    <div class="footer-brand">
+      <!-- Brand column -->
+      <div class="footer-brand">
         <h3>Midnight Atelier</h3>
-
         <p>
-            Bespoke tailoring crafted with precision,
-            elegance, and timeless style.
+          Bespoke tailoring crafted with precision,
+          elegance, and timeless style.
         </p>
-    </div>
+      </div>
 
-    <div class="footer-nav">
+      <!-- Navigation column -->
+      <div class="footer-nav">
         <h4>Navigation</h4>
-
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Collections</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-    </div>
+      </div>
 
-    <div class="footer-social">
+      <!-- Social links column -->
+      <div class="footer-social">
         <h4>Connect</h4>
-
         <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Pinterest</a></li>
-            <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Pinterest</a></li>
+          <li><a href="#">LinkedIn</a></li>
         </ul>
+      </div>
+
     </div>
 
-</div>
-
-<div class="footer-bottom">
-    <p>&copy; 2026 Midnight Atelier. All Rights Reserved.</p>
-</div>
-
-</footer>
+    <!-- Copyright bar -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 Midnight Atelier. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -4,6 +4,7 @@ body {
     color: #F8F5F0;
     font-family: Georgia, serif;
 }
+
 .logo {
     color: #D4AF37;
     font-family: Georgia, serif;
@@ -46,16 +47,13 @@ nav ul li a {
 footer {
     background-color: #111827;
     border-top: 1px solid #D4AF37;
-
     padding-top: 4rem;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-
     padding: 0 2rem 3rem;
-
     display: flex;
     justify-content: space-between;
     gap: 3rem;
@@ -94,7 +92,6 @@ footer {
 .footer-social a {
     color: #F8F5F0;
     text-decoration: none;
-
     transition: color .3s ease;
 }
 
@@ -105,9 +102,7 @@ footer {
 
 .footer-bottom {
     text-align: center;
-
     border-top: 1px solid rgba(212, 175, 55, 0.2);
-
     padding: 1.5rem;
 }
 
@@ -115,9 +110,9 @@ footer {
     color: #F8F5F0;
     font-size: .9rem;
 }
+
 /* =========================
    ABOUT PAGE SECTIONS
-   Story / Inspiration / Craftsmanship
    ========================= */
 
 #story,
@@ -127,28 +122,23 @@ footer {
     padding: 5rem 2rem;
 }
 
-/* Alternating darker section */
 #inspiration {
     background-color: #111827;
 }
 
-/* Main two-column container */
 .about-container {
     max-width: 1200px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     gap: 4rem;
 }
 
-/* Text and image each take half */
 .about-content,
 .about-image {
     flex: 1;
 }
 
-/* Headings */
 .about-content h2 {
     color: #D4AF37;
     font-size: 2.5rem;
@@ -156,7 +146,6 @@ footer {
     letter-spacing: 2px;
 }
 
-/* Paragraphs */
 .about-content p {
     color: #F8F5F0;
     font-size: 1.05rem;
@@ -164,30 +153,30 @@ footer {
     margin-bottom: 1.2rem;
 }
 
-/* Images */
 .about-image img {
     width: 100%;
     height: 450px;
     object-fit: cover;
     display: block;
-
     border-radius: 10px;
     border: 1px solid #D4AF37;
-
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
 
-/* Mobile layout */
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+        flex-wrap: wrap;
         padding: 1.5rem;
+        gap: 0.5rem;
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 0.75rem;
     }
 
@@ -222,15 +211,15 @@ footer {
     }
 
     .footer-container {
-        flex-direction: column;
-        gap: 2rem;
+        flex-wrap: wrap;
+        gap: 1.5rem;
         padding: 0 1.5rem 2rem;
     }
 
     .footer-brand,
     .footer-nav,
     .footer-social {
-        width: 100%;
+        flex: 1 1 140px;
     }
 
     .footer-bottom {
