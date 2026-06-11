@@ -6,8 +6,8 @@
   <!-- Ensures the page scales correctly on mobile devices -->
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Bespoke tailoring services at Midnight Atelier — suits, alterations, occasion wear, and more." />
-  <!-- Links to the services-specific stylesheet -->
-  <link rel="stylesheet" href="css/servicesstyles.css">
+  <!-- Links to the master stylesheet shared across all pages -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -57,22 +57,38 @@
     <!-- =====================
          SERVICES GRID
          CSS Grid — 2 columns on desktop, 1 on mobile.
-         Each service is an <article> (self-contained content)
-         with a gold number, heading, divider, description,
-         and a text-link CTA.
+         Each service is an <article> card with:
+           - a full-width photo at the top
+           - a text content area below with heading,
+             gold divider, description, and CTA link
+
+         HOW A CARD IS BUILT:
+           <article class="service-card">
+             <img>                    ← full-width photo, cropped to fixed height
+             <div class="card-content">
+               <h3>                   ← service name
+               <div class="divider">  ← thin gold line
+               <p>                    ← description
+               <a class="card-button"> ← text-link CTA
 
          TO ADD A NEW SERVICE: copy any <article> block,
-         update the number, heading, description, and button
-         text. The CSS handles layout automatically.
+         update the img src, alt text, heading, description,
+         and button text. The CSS handles layout automatically.
+
+         IMAGE NOTES:
+         src attributes are left blank — fill in your image
+         paths when ready. Recommended ratio: landscape 3:2
+         or 16:9. object-fit: cover in the CSS crops them
+         neatly without distorting the image.
          ===================== -->
     <section class="services-section">
       <div class="services-grid">
 
         <!-- SERVICE 1: Bespoke Suits -->
         <article class="service-card">
-          <!-- Gold number — purely decorative, not semantic ordering -->
-          <div class="service-number">01</div>
-          <div class="service-content">
+          <!-- Full-width service photo -->
+          <img src="images/bespoke-suit.webp" alt="Bespoke suits" class="service-photo" />
+          <div class="card-content">
             <h3>Bespoke Suits</h3>
             <!-- Thin gold line separating title from body text -->
             <div class="divider"></div>
@@ -88,8 +104,9 @@
 
         <!-- SERVICE 2: Made-to-Measure -->
         <article class="service-card">
-          <div class="service-number">02</div>
-          <div class="service-content">
+          <!-- Full-width service photo — fill in src when ready -->
+          <img src="images/made-to-measure.jpg" alt="Made-to-measure tailoring" class="service-photo" />
+          <div class="card-content">
             <h3>Made-to-Measure</h3>
             <div class="divider"></div>
             <p>
@@ -103,8 +120,9 @@
 
         <!-- SERVICE 3: Occasion & Black Tie -->
         <article class="service-card">
-          <div class="service-number">03</div>
-          <div class="service-content">
+          <!-- Full-width service photo — fill in src when ready -->
+          <img src="images/black-tie.jpg" alt="Occasion and black tie wear" class="service-photo" />
+          <div class="card-content">
             <h3>Occasion &amp; Black Tie</h3>
             <div class="divider"></div>
             <p>
@@ -117,8 +135,9 @@
 
         <!-- SERVICE 4: Shirts & Trousers -->
         <article class="service-card">
-          <div class="service-number">04</div>
-          <div class="service-content">
+          <!-- Full-width service photo — fill in src when ready -->
+          <img src="images/bespoke-shirt.jpg" alt="Bespoke shirts and trousers" class="service-photo" />
+          <div class="card-content">
             <h3>Shirts &amp; Trousers</h3>
             <div class="divider"></div>
             <p>
@@ -132,8 +151,9 @@
 
         <!-- SERVICE 5: Alterations & Restoration -->
         <article class="service-card">
-          <div class="service-number">05</div>
-          <div class="service-content">
+          <!-- Full-width service photo — fill in src when ready -->
+          <img src="images/restoration.jpeg" alt="Alterations and garment restoration" class="service-photo" />
+          <div class="card-content">
             <h3>Alterations &amp; Restoration</h3>
             <div class="divider"></div>
             <p>
@@ -147,8 +167,9 @@
 
         <!-- SERVICE 6: Wardrobe Consultation -->
         <article class="service-card">
-          <div class="service-number">06</div>
-          <div class="service-content">
+          <!-- Full-width service photo — fill in src when ready -->
+          <img src="images/consult.webp" alt="Private wardrobe consultation" class="service-photo" />
+          <div class="card-content">
             <h3>Wardrobe Consultation</h3>
             <div class="divider"></div>
             <p>

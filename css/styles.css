@@ -1,5 +1,28 @@
+/* =====================================================
+   MIDNIGHT ATELIER — MASTER STYLESHEET
+   Single stylesheet shared across all pages.
+
+   Structure:
+     1.  Global Reset & Base
+     2.  Navigation
+     3.  Buttons
+     4.  Hero              (index.html)
+     5.  Services Page     (services.html)
+     6.  Contact Page      (contact.html)
+     7.  About Page        (about.html)
+     8.  Footer
+     9.  Tablet            max-width: 1024px
+     10. Mobile            max-width: 768px
+   ===================================================== */
+
+
 /* =========================
-   GLOBAL RESET & BASE
+   1. GLOBAL RESET & BASE
+   box-sizing: border-box means padding and border are
+   included in an element's total width/height, preventing
+   unexpected overflow on any page.
+   overflow-y: scroll keeps the scrollbar always visible
+   so the layout doesn't shift between short and tall pages.
    ========================= */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -11,13 +34,25 @@ html {
 
 body {
     margin: 0;
-    background-color: #0F172A;
-    color: #F8F5F0;
+    background-color: #0F172A;   /* deep navy — site-wide background */
+    color: #F8F5F0;               /* off-white — default text colour */
     font-family: Georgia, serif;
 }
 
+/* Gold uppercase logo class — used if a .logo element is added */
+.logo {
+    color: #D4AF37;
+    font-family: Georgia, serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
 /* =========================
-   NAVIGATION BAR
+   2. NAVIGATION BAR
+   Shared across every page.
+   Brand on the left, links on the right.
+   justify-content: space-between pushes them to opposite ends.
    ========================= */
 nav {
     display: flex;
@@ -26,12 +61,14 @@ nav {
     padding: 2rem;
 }
 
+/* Gold brand name with wide letter spacing */
 .brand h2 {
     color: #D4AF37;
     margin-bottom: 0;
     letter-spacing: 2px;
 }
 
+/* Muted tagline beneath the brand name */
 .brand p {
     color: #D6D3D1;
     margin-top: 0;
@@ -39,56 +76,32 @@ nav {
     text-transform: uppercase;
 }
 
+/* Horizontal link list — no bullets, no default margin */
 nav ul {
     list-style: none;
     display: flex;
     gap: 2rem;
-    margin: 2px;
+    margin: 0;
     padding: 0;
 }
 
+/* Nav links — off-white by default, gold on hover */
 nav ul li a {
     text-decoration: none;
     color: #F8F5F0;
+    transition: color 0.3s ease;
 }
+
+nav ul li a:hover {
+    color: #D4AF37;
+}
+
 
 /* =========================
-   HERO SECTION
-   ========================= */
-.hero {
-    height: 100vh;
-    padding: 8rem 3rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-image: url("../images/hero.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #F8F5F0;
-    font-family: Georgia, serif;
-}
-
-.hero h1 {
-    max-width: 600px;
-    font-size: 3rem;
-    line-height: 1.2;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-
-.hero p {
-    max-width: 480px;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-}
-
-/* =========================
-   BUTTON
+   3. BUTTONS
+   Shared button style used on every page.
+   Transparent with a gold border by default.
+   Fills gold on hover with dark text for contrast.
    ========================= */
 button {
     background-color: transparent;
@@ -105,8 +118,412 @@ button:hover {
     color: #0F172A;
 }
 
+
 /* =========================
-   FOOTER
+   4. HERO SECTION — index.html
+   Full-viewport background image with text at the top.
+   background-attachment: fixed creates a parallax effect
+   on desktop. Disabled on tablet and mobile (see below)
+   because iOS ignores it and causes layout bugs.
+   ========================= */
+.hero {
+    height: 100vh;
+    padding: 8rem 3rem 3rem;     /* generous top padding clears the nav */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* text sits at the top of the section */
+    align-items: flex-start;
+    background-image: url("../images/hero.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #F8F5F0;
+    font-family: Georgia, serif;
+}
+
+/* Large display heading — max-width keeps it readable */
+.hero h1 {
+    max-width: 600px;
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    /* Shadow improves legibility over the background image */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Supporting paragraph below the heading */
+.hero p {
+    max-width: 480px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================
+   5. SERVICES PAGE — services.html
+   ========================= */
+
+/* ---------------------------
+   Services Hero
+   Introduces the page with a gold eyebrow label,
+   large heading, and a muted subheading.
+   A faint gold bottom border separates it from the grid below.
+   --------------------------- */
+.services-hero {
+    padding: 7rem 3rem 4rem;
+    max-width: 700px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    margin-bottom: 4rem;
+}
+
+/* Small gold uppercase label above the h1 */
+.services-eyebrow {
+    color: #D4AF37;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+/* Large display heading for the services page */
+.services-hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 0 0 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Supporting paragraph — muted so it sits quietly below the h1 */
+.services-subhead {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #D6D3D1;
+    margin: 0;
+}
+
+/* ---------------------------
+   Services Grid
+   2-column CSS Grid on desktop, 1 column on mobile.
+   Each service is an <article> with a gold number,
+   heading, gold divider, description, and a CTA link.
+   To add a new service: copy any <article> in services.html,
+   update the number, heading, description, and button text.
+   The CSS handles layout automatically.
+   --------------------------- */
+.services-section {
+    padding: 0 3rem 5rem;
+}
+
+/* Outer grid — 2 equal columns with hairline gold borders */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Individual service card — photo at the top, text content below.
+   flex-direction: column stacks the image above the card-content div.
+   overflow: hidden ensures the photo corners respect the card border. */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Subtle gold tint appears on card hover */
+.service-card:hover {
+    background-color: rgba(212, 175, 55, 0.04);
+}
+
+/* Service photo — full-width image at the top of each card.
+   object-fit: cover crops the image to fill the fixed height
+   without distorting it. Fill in src attributes in services.html.
+   Adjust height here if you want taller or shorter photos. */
+.service-photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Text area below the photo — padding applied here so the photo sits
+   flush edge-to-edge at the top while the text has breathing room */
+.card-content {
+    padding: 1.75rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Service heading — no top margin so it sits flush at the top of the content */
+.card-content h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* Thin gold decorative line between heading and body text */
+.divider {
+    width: 2rem;
+    height: 1px;
+    background-color: #D4AF37;
+    margin-bottom: 1rem;
+}
+
+/* Service description — muted colour, generous line height */
+.card-content p {
+    color: #D6D3D1;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0 0 1.5rem;
+}
+
+/* Text-link CTA — gold with an underline border, turns white on hover */
+.card-button {
+    display: inline-block;
+    text-decoration: none;
+    color: #D4AF37;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-button:hover {
+    color: #F8F5F0;
+    border-color: #F8F5F0;
+}
+
+/* ---------------------------
+   Services Closing CTA
+   Centred section at the bottom of services.html.
+   Gold top border mirrors the hero's bottom border.
+   --------------------------- */
+.services-cta {
+    text-align: center;
+    padding: 5rem 3rem 6rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.services-cta h2 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.services-cta p {
+    color: #D6D3D1;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+
+/* =========================
+   6. CONTACT PAGE — contact.html
+   ========================= */
+
+/* ---------------------------
+   Contact Section
+   Full-width section with generous padding.
+   Matches the site's navy background.
+   --------------------------- */
+#contact {
+    background-color: #0F172A;
+    padding: 6rem 2rem;
+    color: #F8F5F0;
+}
+
+/* ---------------------------
+   Contact Container
+   Two-column flex layout:
+   contact info on the left, form on the right.
+   --------------------------- */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* Each column takes equal half width */
+.contact-info,
+.contact-form {
+    flex: 1;
+}
+
+/* Large gold heading for the contact info column */
+.contact-info h1 {
+    color: #D4AF37;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Body copy in the contact info column */
+.contact-info p {
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+/* Contact details block (email, phone, address) */
+.contact-details {
+    margin-top: 2rem;
+}
+
+/* ---------------------------
+   Contact Form
+   Dark card with a gold border containing all form fields.
+   --------------------------- */
+.contact-form {
+    background-color: #111827;
+    padding: 2.5rem;
+    border: 1px solid #D4AF37;
+    border-radius: 10px;
+}
+
+/* Gold labels above each field */
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #D4AF37;
+    font-weight: bold;
+}
+
+/* ---------------------------
+   Form Fields
+   box-sizing: border-box ensures padding is included
+   in the width, preventing fields from overflowing
+   outside the form's gold border.
+   --------------------------- */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+    background-color: #0F172A;
+    color: #F8F5F0;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+/* Textarea is taller than inputs and vertically resizable */
+.contact-form textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+/* Dimmed placeholder text so it doesn't compete with typed input */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(248, 245, 240, 0.6);
+}
+
+/* ---------------------------
+   Contact Submit Button
+   Solid gold — overrides the global transparent button style.
+   Turns light cream on hover.
+   --------------------------- */
+.contact-form button {
+    background-color: #D4AF37;
+    color: #0F172A;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #F8F5F0;
+}
+
+
+/* =========================
+   7. ABOUT PAGE — about.html
+   ========================= */
+
+/* ---------------------------
+   About Sections
+   Three alternating content sections: story, inspiration,
+   craftsmanship. The middle section uses a slightly lighter
+   background to break up the page visually.
+   --------------------------- */
+#story,
+#craftsmanship {
+    background-color: #0F172A;
+    padding: 5rem 2rem;
+}
+
+#inspiration {
+    background-color: #111827;  /* slightly lighter to alternate visually */
+    padding: 5rem 2rem;
+}
+
+/* ---------------------------
+   About Container
+   Two-column flex layout: text on one side, image on the other.
+   Alternating order can be set per-section in the HTML
+   using flex-direction: row-reverse on individual containers.
+   --------------------------- */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* Text and image columns each take equal space */
+.about-content,
+.about-image {
+    flex: 1;
+}
+
+/* Gold section heading with wide letter spacing */
+.about-content h2 {
+    color: #D4AF37;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+/* Body copy — off-white, generous line height for readability */
+.about-content p {
+    color: #F8F5F0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+/* About section image — fixed height, cropped to fill, gold border */
+.about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;      /* crops without distorting the image */
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #D4AF37;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   8. FOOTER
+   Shared across every page.
+   Dark background with a gold top border.
+   Three-column flex layout: brand, nav links, social links.
    ========================= */
 footer {
     background-color: #111827;
@@ -114,6 +531,7 @@ footer {
     padding-top: 4rem;
 }
 
+/* Three-column container, centred with a max-width */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -123,12 +541,14 @@ footer {
     gap: 3rem;
 }
 
+/* Each column takes equal space */
 .footer-brand,
 .footer-nav,
 .footer-social {
     flex: 1;
 }
 
+/* Gold headings for each footer column */
 .footer-brand h3,
 .footer-nav h4,
 .footer-social h4 {
@@ -136,27 +556,31 @@ footer {
     margin-bottom: 1rem;
 }
 
+/* Brand description text */
 .footer-brand p {
     color: #F8F5F0;
     line-height: 1.8;
 }
 
+/* Remove default list styling from footer link lists */
 .footer-nav ul,
 .footer-social ul {
     list-style: none;
     padding: 0;
 }
 
+/* Spacing between footer list items */
 .footer-nav li,
 .footer-social li {
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
 }
 
+/* Footer links — off-white by default, gold on hover */
 .footer-nav a,
 .footer-social a {
     color: #F8F5F0;
     text-decoration: none;
-    transition: color .3s ease;
+    transition: color 0.3s ease;
 }
 
 .footer-nav a:hover,
@@ -164,6 +588,7 @@ footer {
     color: #D4AF37;
 }
 
+/* Copyright bar at the very bottom of the footer */
 .footer-bottom {
     text-align: center;
     border-top: 1px solid rgba(212, 175, 55, 0.2);
@@ -172,13 +597,20 @@ footer {
 
 .footer-bottom p {
     color: #F8F5F0;
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 
+
 /* =========================
-   TABLET — max-width: 1024px
+   9. TABLET — max-width: 1024px
+   Slightly smaller headings on mid-size screens.
+   background-attachment: scroll disables the parallax on
+   tablets — many tablet browsers handle fixed backgrounds
+   poorly, same as mobile iOS.
    ========================= */
 @media (max-width: 1024px) {
+
+    /* Disable parallax on tablet */
     .hero {
         background-attachment: scroll;
     }
@@ -186,24 +618,45 @@ footer {
     .hero h1 {
         font-size: 2.5rem;
     }
+
+    .services-hero h1 {
+        font-size: 2.8rem;
+    }
 }
 
+
 /* =========================
-   MOBILE — max-width: 768px
+   10. MOBILE — max-width: 768px
+   Applied to all pages.
+   - Nav wraps to a second line instead of overflowing
+   - Hero uses min-height: 100svh which accounts for the
+     mobile browser chrome bar (100vh does not)
+   - background-attachment: scroll fixes the iOS parallax bug
+   - Services grid collapses to a single column
+   - Contact and About containers stack vertically
+   - Buttons fill full width
+   - Footer columns wrap naturally
    ========================= */
 @media (max-width: 768px) {
+
+    /* Nav wraps brand and links onto two lines if needed */
     nav {
         flex-wrap: wrap;
         padding: 1.5rem;
         gap: 0.5rem;
     }
 
+    /* Links wrap instead of overflowing off-screen */
     nav ul {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0.75rem;
     }
 
+    /* Hero mobile fixes:
+       - height: auto + min-height: 100svh prevents the page
+         being locked to the viewport height on iOS/Android
+       - background-attachment: scroll fixes the iOS parallax bug */
     .hero {
         height: auto;
         min-height: 100svh;
@@ -223,23 +676,115 @@ footer {
         font-size: 1rem;
     }
 
+    /* Services hero — reduced padding on small screens */
+    .services-hero {
+        padding: 3rem 1.5rem 3rem;
+    }
+
+    .services-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Tighter side padding on the services grid section */
+    .services-section {
+        padding: 0 1.5rem 4rem;
+    }
+
+    /* Single column — service cards stack vertically */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduced padding on the services closing CTA */
+    .services-cta {
+        padding: 4rem 1.5rem;
+    }
+
+    .services-cta h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Contact section — reduced padding */
+    #contact {
+        padding: 3rem 1.5rem;
+    }
+
+    /* Contact layout stacks info above the form on mobile */
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-info h1 {
+        font-size: 2rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+    }
+
+    /* Reduce form padding on mobile */
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    /* Slightly larger font and reduced padding for touch targets */
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 1rem;
+        padding: 0.85rem;
+    }
+
+    /* About sections — reduced padding */
+    #story,
+    #inspiration,
+    #craftsmanship {
+        padding: 3rem 1.5rem;
+    }
+
+    /* About layout stacks text above image on mobile */
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+
+    /* Shorter image height on mobile */
+    .about-image img {
+        height: 280px;
+        max-width: 100%;
+    }
+
+    /* Shared button — fills full width on mobile */
     button {
         width: 100%;
         padding: 1rem;
         font-size: 1rem;
     }
 
+    /* Prevent images from overflowing their containers */
     img {
         max-width: 100%;
         height: auto;
     }
 
+    /* Footer columns wrap naturally at narrow widths */
     .footer-container {
         flex-wrap: wrap;
         gap: 1.5rem;
         padding: 0 1.5rem 2rem;
     }
 
+    /* Each column shrinks but won't go below 140px wide */
     .footer-brand,
     .footer-nav,
     .footer-social {
